@@ -28,6 +28,7 @@
 		255C53C3197E49CE007A793E /* WordPredictor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WordPredictor; sourceTree = BUILT_PRODUCTS_DIR; };
 		255C53C6197E49CE007A793E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		255C53C8197E49CE007A793E /* WordPredictor.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = WordPredictor.1; sourceTree = "<group>"; };
+		255C53CF197E4AB2007A793E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		255C53BA197E49CE007A793E = {
 			isa = PBXGroup;
 			children = (
+				255C53CF197E4AB2007A793E /* .gitignore */,
 				255C53C5197E49CE007A793E /* WordPredictor */,
 				255C53C4197E49CE007A793E /* Products */,
 			);
