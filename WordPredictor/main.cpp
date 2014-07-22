@@ -9,6 +9,15 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
+#include <stdio.h>  /* defines FILENAME_MAX */
+#ifdef WINDOWS
+#include <direct.h>
+#define GetCurrentDir _getcwd
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#endif
 
 using namespace std;
 
@@ -17,6 +26,8 @@ static void deletePtr(T* const ptr)
 {
     delete ptr;
 }
+
+int totalNodes = 0;
 
 class Trie {
 private:
@@ -49,6 +60,7 @@ private:
                 {
                     node* middleNode = new node(word[charLocation]);
                     children.push_back(middleNode);
+                    totalNodes++;
                     return middleNode->insert(word, charLocation + 1);
                 }
                 else
@@ -140,28 +152,53 @@ public:
         transform(wordToAdd.begin(), wordToAdd.end(), wordToAdd.begin(), ::tolower);
         return portal->retrieve(wordToAdd, 0);
     }
+    
+    bool populate(string fileName)
+    {
+        string line;
+        ifstream myfile (fileName);
+        if (myfile.is_open())
+        {
+            while ( getline (myfile,line) )
+            {
+                insert(line);
+            }
+            myfile.close();
+            return true;
+        }
+        
+        else cout << "Unable to open file" << "\n";
+        return false;
+    }
 };
 
 int main(int argc, const char * argv[])
 {
     
     // insert code here...
-    string hello = "heillo";
-    for (int i = 0; i < hello.length(); i++)
-    {
-        cout << hello[i] << " " << i << " \n";
-    }
-    
     Trie* myTrie = new Trie();
-    myTrie->insert(hello);
-    myTrie->insert("heist");
-    myTrie->insert("hell");
-    myTrie->insert("helix");
-    myTrie->insert("Aamir");
-    
-    //only works with at least two input characters
-    string options = myTrie->retrieve("hei");
-    cout << options;
+    cout << "Enter the filePath: " ;
+    string input, options;
+    getline(cin, input);
+    if (myTrie->populate(input))
+    {
+        cout << "Trie was populated. Total notes created were " << totalNodes << "\n";
+    }
+    else
+    {
+        cout << "Sorry, Trie was not populated. \n";
+        goto cleanup;
+    }
+    cout << "Enter a stream and we will tell you what words are possible. Enter quit to exit.\n";
+    getline(cin, input);
+    while (input != "quit")
+    {
+        options = myTrie->retrieve(input);
+        cout << options;
+        cout << "Next Word: ";
+        getline(cin, input);
+    }
+cleanup:
     deletePtr<Trie>(myTrie);
     return 0;
 }
