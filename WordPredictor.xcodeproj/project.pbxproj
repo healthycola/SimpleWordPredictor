@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		255C53C7197E49CE007A793E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 255C53C6197E49CE007A793E /* main.cpp */; };
 		255C53C9197E49CE007A793E /* WordPredictor.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 255C53C8197E49CE007A793E /* WordPredictor.1 */; };
+		255C53D3197F2FD4007A793E /* Trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 255C53D1197F2FD4007A793E /* Trie.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,8 @@
 		255C53C8197E49CE007A793E /* WordPredictor.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = WordPredictor.1; sourceTree = "<group>"; };
 		255C53CF197E4AB2007A793E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		255C53D0197EE492007A793E /* wordList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordList.txt; sourceTree = "<group>"; };
+		255C53D1197F2FD4007A793E /* Trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
+		255C53D2197F2FD4007A793E /* Trie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trie.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 				255C53D0197EE492007A793E /* wordList.txt */,
 				255C53C6197E49CE007A793E /* main.cpp */,
 				255C53C8197E49CE007A793E /* WordPredictor.1 */,
+				255C53D1197F2FD4007A793E /* Trie.cpp */,
+				255C53D2197F2FD4007A793E /* Trie.h */,
 			);
 			path = WordPredictor;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				255C53C7197E49CE007A793E /* main.cpp in Sources */,
+				255C53D3197F2FD4007A793E /* Trie.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
